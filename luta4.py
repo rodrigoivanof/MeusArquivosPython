@@ -16,8 +16,10 @@ poção = 0
 dano = 1
 adp = 1
 
+#define a função chamar a luta
 def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
 
+#define se você ganha ou perde
     print("Você encontrou um zombi lute contra ele")
 
     defesa = ('fracassou sucesso fracassou').split()
@@ -32,9 +34,11 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
             break
         print()
 
+#mostra a vida e as escolhas
         print(f"sua vida: {vida}\nvida do zombi: {zombi}\nmoedas: {gold}\n")
         escolha =input("ATACAR DEFENDER ITENS POÇÕES\n").lower().strip()[:1]
         
+#usa a escolha atcar e ataca
         if escolha == 'a':
             escolha_atacar = input('Para girar o dado aperte (D): ')
             print()
@@ -47,7 +51,7 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
             else:
                 print("Você usou o comando errado e morreu")
                 break
-    #aqui que eu mexi
+#usa a escolha itens e abre a loja
         if escolha == 'i':
             print(f"você tem {gold} moedas\n")
             compra = (input(f"poção = 10g (1)\nespada = {esp1}g (2)\nadorar os deuses = {ado}g (3)\n"))
@@ -79,6 +83,7 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
                     print("você não tem moedas suficientes\n")
             else:
                 escolha = "a"
+#usa a escolha poção e compra um do mesmo
         if escolha == 'p':
             if poção >= 1:
                 vida = vida + 15
@@ -96,6 +101,7 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
             else:
                 print('sua defesa fracassou\nvocê recebera dano x2 no proximo ataque')
 
+#executa o ataque do zumbi
         print()
         print('Agora o zombi ira atacar')
         ataque_zombi = r(1,20)
@@ -112,6 +118,7 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
                 if sorte == 'fracassou':
                     vida -= ataque_zombi*2
 
+#ganha o ouro
         gold1 = r(1,10)
         gold2 = gold1 * adp
         gold = gold + gold2
@@ -121,6 +128,7 @@ def luta(esp1,ado,vida,zombi,gold,poção,dano,adp):
 
         print()
 
+#inicia o jogo
 valor1 = input("deseja lutar?(s/n)\n")
 if valor1 == "s":
     luta(esp1,ado,vida,zombi,gold,poção,dano,adp)

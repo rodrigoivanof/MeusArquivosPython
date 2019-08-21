@@ -1,3 +1,5 @@
+#-*- coding utf-8 -*-
+
 from random import randint as r
 from random import choice as c
 

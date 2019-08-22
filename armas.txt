@@ -1,0 +1,28 @@
+armas fisicas
+    adaga
+    claves
+    punhais
+    espada
+    lança
+    machado
+    escudo
+armas magicas
+    cajado
+    arco magico
+        enves de flechas usa mp
+    livro magico
+    amuleto
+    espada magica
+        gasta mp quando usada
+armas a distancia
+    arco
+    besta
+    shuriken
+    tommahalk
+    lança
+instrumentos
+    flauta
+    alaude
+    atabaque
+    baixo
+    air guitar

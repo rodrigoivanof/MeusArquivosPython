@@ -1,0 +1,12 @@
+materiais
+    ferro
+    aço
+    ouro
+    electrum
+    prata
+    carvão
+    saphira
+    ruby
+    topazio
+    madeira
+ 

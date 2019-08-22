@@ -1,0 +1,77 @@
+classes
+    Bárbaro:
+        Força - 10
+        Destreza - 5
+        Mira - 1
+        Recuperação - 5
+        Arcanidade - 1
+        Sabedoria - 5
+        Percepção - 3
+        Carisma - 5
+        Sorte - 1
+
+    Bardo:
+        Força - 5
+        Destreza - 10
+        Mira - 5
+        Recuperação - 5
+        Arcanidade - 5
+        Sabedoria - 1
+        Percepção - 1
+        Carisma - 10
+        Sorte - 5
+
+    Clerigo:
+        Força - 1
+        Destreza - 5
+        Mira - 10
+        Recuperação - 10
+        Arcanidade - 10
+        Sabedoria - 5
+        Percepção - 5
+        Carisma - 1
+        Sorte - 10
+
+    Mago:
+        Força - 5
+        Destreza - 10
+        Mira - 5
+        Recuperação - 5
+        Arcanidade - 10
+        Sabedoria - 5
+        Percepção - 5
+        Carisma - 1
+        Sorte - 10
+
+    Druida:
+        Força - 1
+        Destreza - 5
+        Mira - 5
+        Recuperação - 5
+        Arcanidade - 9
+        Sabedoria - 10
+        Percepção - 5
+        Carisma - 1
+        Sorte - 9
+
+    Ladino:
+        Força - 1
+        Destreza - 10
+        Mira - 7
+        Recuperação - 5
+        Arcanidade - 1
+        Sabedoria - 10
+        Percepção - 5
+        Carisma - 5
+        Sorte - 10
+
+    Paladino:
+        Força - 5
+        Destreza - 10
+        Mira - 1
+        Recuperação - 5
+        Arcanidade - 5
+        Sabedoria - 5
+        Percepção - 5
+        Carisma - 5
+        Sorte - 5

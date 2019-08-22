@@ -1,0 +1,11 @@
+elementos
+    luz
+    trevas
+    agua
+    fogo
+    terra
+    ar
+    gelo
+    natura
+    fumaça
+    ferro

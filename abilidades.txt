@@ -1,0 +1,9 @@
+força
+destreza
+mira
+recuperação
+arcanidade
+sabedoria
+percepção
+carisma
+sorte

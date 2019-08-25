@@ -1,4 +1,3 @@
-
 from random import randint as r
 from random import choice as c
 
@@ -29,7 +28,7 @@ pot = 10
 mp = 50
 #equipamentos
 poção = 0
-gold = 0
+gold = 500
 flechas = 0
 dardos = 0
 arma = "soco"
@@ -55,7 +54,7 @@ xp = 0
 #listas
 classes = ["barbaro","bardo","clérigo","mago","druida","ladino","paladino"]
 raças = ["humano","anão","elfo","gnomo","halfling"]
-armas_fisicas = ["adaga","claves","punhais","machado","escudo"]
+armas_fisicas = ["adaga","clave","punhais","machado","escudo"]
 armas_a_distancia = ["arco","besta","shuriken"]
 armas_magicas = ["cajado","arco magico","livro magico","espada magica"]
 
@@ -64,6 +63,20 @@ print("criação de personagem")
 personagem["raça"] = input(f"escolha uma das raças:\n{raças}\n")
 personagem["classe"] = input(f"escolha uma das classes:\n{classes}\n")
 personagem["nome"] = input("qual seu nome?\n")
+
+perso = True
+while perso:
+    if personagem["raça"] not in raças:
+        personagem["raça"] = input(f"escolha invalida\nescolha uma das raças:\n{raças}\n")
+    else:
+       break
+perso2 = True
+while perso2:
+    if personagem["classe"] not in classes:
+        personagem["classe"] = input(f"escolha invalida\nescolha uma das classes:\n{classes}\n")
+    else:
+        break
+
 
 
 #regulando abilidades
@@ -147,23 +160,19 @@ elif  personagem["classe"] == "paladino":
     carisma += 5
     sorte += 5
 
-
-
-
-
-def batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_magicas,armas_a_distancia,armas_fisicas,vp,mp,gold,poção,sorte):
+def batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_magicas,armas_a_distancia,armas_fisicas,vp,mp,gold,poção,sorte,dni,cdd,destreza):
 #define o inimigo
     inimigo = ("zumbi esqueleto ladrão").split()
-    sorte = c(inimigo)
-    if sorte == "zumbi":
+    sorte1 = c(inimigo)
+    if sorte1 == "zumbi":
         ene = "zumbi"
         ep = 100
         dne = r(1,15)
-    elif sorte == "esqueleto":
+    elif sorte1 == "esqueleto":
         ene = "esqueleto"
         ep = 120
         dne = r(1,20)
-    elif sorte == "ladrão":
+    elif sorte1 == "ladrão":
         ene = "ladrão"
         ep = 100
         dne = r(1,15)
@@ -226,9 +235,9 @@ def batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_mag
         if escolha == "l":
             arma1 = c(armas_fisicas)
             arma2 = c(armas_a_distancia)
-            arma3 = c(armas_a_distancia)
-            print(f"você tem {gold} de moedas\n")
-            escolha_loja = input(f"POÇÃO {arma1} {arma2} {arma3}").lower().strip().upper()
+            arma3 = c(armas_magicas)
+            print("todas as armas custão 50 moedas")
+            escolha_loja = input(f"poção {arma1} {arma2} {arma3}\n").lower().strip()
             if escolha_loja == "p":
                 print("a poção custa 15 moedas e cura 10 de vida")
                 if gold <= 15:
@@ -236,8 +245,39 @@ def batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_mag
                 else:
                     poção += 1
                     gold -= 15
-
+            if escolha_loja == arma1:
+                gold - 50
+                if arma1 == "adaga":
+                    arma = "adaga"
+                    dni = 5
+                    print("você adiquiriu adaga")
+                if arma1 == "clave":
+                    arma = "clave"
+                    dni = 8
+                    print("você adiquiriu clave")
+                if arma1 == "punhais":
+                    arma = "punhais"
+                    dni = 6
+                    sorte += 1
+                    print("você adiquiriu punhais")
+                if arma1 == "machado":
+                    arma = "machado"
+                    dni = 10
+                    print("você adiquiriu machado")
+                if arma1 == "escudo":
+                    arma = "escudo"
+                    print("você adiquiriu escudo")
+                    dni =  5
+                    cdd = 10
+            print(arma)
+            print(dni)
+            print(destreza)
+                
                     
+            
+                    
+                    
+
 #inimigo ataca
         print()
         print(f"Agora o {ene} ira atacar")
@@ -245,8 +285,9 @@ def batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_mag
             print(f"você recebeu {dne} de dano")
             if escolha == 'a':
                 vp -= dne
-                gold += r(1,15)
 
+#ganha ouro
+        gold1 = r(1,15) + sorte
+        gold += gold1
 
-batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_magicas,armas_a_distancia,armas_fisicas,vp,mp,gold,poção,sorte)
-        
+batalha(ene,dne,goldr,dano_fisico,dano_magico,dano_a_distacia,arma,armas_magicas,armas_a_distancia,armas_fisicas,vp,mp,gold,poção,sorte,dni,cdd,destreza)            
